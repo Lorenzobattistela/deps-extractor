@@ -1,5 +1,6 @@
 mod cli;
 mod language;
+mod parsers;
 
 use crate::cli::parse_cli;
 use crate::language::{Language, LanguageFactory};
