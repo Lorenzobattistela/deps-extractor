@@ -1,4 +1,4 @@
-use crate::parsers::{AgdaParser, TypeScriptParser};
+use crate::parsers::{AgdaParser, HaskellParser, TypeScriptParser};
 use std::path::PathBuf;
 use std::hash::{Hash, Hasher};
 
@@ -47,6 +47,7 @@ impl LanguageFactory {
     pub fn get_parser(lang: &str) -> Option<Box<dyn DependencyParser>> {
         match lang {
             "agda" => Some(Box::new(AgdaParser)),
+            "haskell" => Some(Box::new(HaskellParser)),
             "ts" | "typescript" => Some(Box::new(TypeScriptParser)),
             _ => None,
         }
